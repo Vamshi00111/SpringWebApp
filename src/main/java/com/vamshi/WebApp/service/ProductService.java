@@ -10,9 +10,9 @@ import java.util.List;
 @Component
 public class ProductService {
 
-    List<Product> products = new ArrayList<>(Arrays.asList(new Product(0001, "Mac Book", 1700),
-            new Product(0002, "Iphone", 1100),
-            new Product(0003, "Lamp", 10)));
+    List<Product> products = new ArrayList<>(Arrays.asList(new Product(1001, "Mac Book", 1700),
+            new Product(1002, "Iphone", 1100),
+            new Product(1003, "Lamp", 10)));
 
     public List<Product> getProducts(){
         return products;
