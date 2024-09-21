@@ -1,9 +1,7 @@
 package com.vamshi.WebApp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,13 +21,20 @@ import java.util.Date;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // For the auto generation of ID
-    private int prodId;
-    private String prodName;
-    private String description;
+    private int id;
+    private String name;
+    private String desc;
     private String brand;
     private BigDecimal price;
     private String category;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy") // To change Date Format
     private Date releaseDate;
     private boolean available;
     private int quantity;
+
+    private String imageName;
+    private String imageType;
+    @Lob // Large Object
+    private byte[] imageData;
 }
